@@ -12,8 +12,6 @@ export class CompaniesComponent implements OnInit {
 
   constructor( private dataService: DataPassService) { }
 
-
-
   companies: any[] = [
     {
       id: 1,
