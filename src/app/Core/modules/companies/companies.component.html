@@ -1,0 +1,36 @@
+<div class="panel_container">
+    <div class="company_wrapper">
+        <div class="single_company_card" *ngFor="let company of companies" [ngClass]="{'active': company.showMore}">
+            <div class="card_header">
+                <span class="circle"></span>
+                <span class="status">{{company.status}}</span>
+                <span class="icon material-icons">
+                    unfold_more
+                    </span>  
+            </div>
+            <div class="card_body">
+                <span class="compan_name">{{company.name}}</span>
+                <span class="sub_title">{{company.subTitle}}</span>
+                <div class="activity_wrapper">
+                    <span class="activity">{{company.salePending? 'Sale Pending': ''}}</span>
+                    <div class="activity">{{company.purchasePending? 'Purchase Pending' : ''}}</div>
+                </div>
+                
+            </div>
+            <div class="card_footer" (click)="onSeeMore(company)">
+                <span class="title">More</span>
+                <span class="icon-down"></span>
+                         </div>
+            <div class="card_more_info">
+                <div class="product">
+                    <span class="title">Products</span>
+                    <span class="qty value">{{company.prodQty}}</span>
+                </div>
+                <div class="value">
+                    <span class="title">Value</span>
+                    <span class="value">{{company.totalValue | currency : 'BDT' : 'symbol-narrow'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

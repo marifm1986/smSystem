@@ -1,0 +1,116 @@
+@import "../../../../styles.scss";
+
+.panel_container {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  max-height: calc(100vh - 10rem);
+  overflow: auto;
+  .company_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .single_company_card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 19.375rem;
+      max-width: 21.25rem;
+      height: 185px;
+      .card_header {
+        display: flex;
+        align-items: center;
+        height: 2.625rem;
+        gap: 0.5rem;
+        padding: 0.3rem 1rem;
+        background: $primary_color;
+        .circle {
+          width: 0.8125rem;
+          height: 0.8125rem;
+          border-radius: 20px;
+          background: $key_color;
+        }
+        .status {
+          color: $key_color;
+          flex: 1;
+        }
+
+        .icon {
+          transform: rotate(45deg);
+          color: #ccc;
+          cursor: pointer;
+          user-select: none;
+        }
+      }
+      .card_body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: rgba($primary_color, 0.5);
+        height: 100%;
+        padding: 1rem;
+        color: $text_color;
+        .compan_name {
+          font-size: 1.25rem;
+          @include ellipsis();
+        }
+        .sub_title {
+          font-size: 1rem;
+          font-weight: lighter;
+          @include ellipsis();
+        }
+        .activity_wrapper {
+          display: flex;
+          justify-content: space-between;
+          margin-top: auto;
+          .activity {
+            color: yellow;
+          }
+        }
+      }
+      .card_footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $primary_color;
+        color: $text_color;
+        padding: 0.2rem 1rem;
+        height: 1.875rem;
+        font-size: 0.75rem;
+        cursor: pointer;
+      }
+      .card_more_info {
+        position: absolute;
+        display: none;
+        justify-content: space-between;
+        padding: 1rem;
+        bottom: -6.25rem;
+        height: 6.25rem;
+        width: 100%;
+        background: #343941;
+        z-index: 1;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        border-bottom: 1px solid $text_color;
+        border-radius: 0 0 5px 5px;
+        .value,
+        .product {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          color: $text_color;
+
+          .value {
+            font-size: 20px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      &.active {
+        .card_more_info {
+          display: flex;
+        }
+      }
+    }
+  }
+}

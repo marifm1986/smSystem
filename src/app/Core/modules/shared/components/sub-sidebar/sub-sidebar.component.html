@@ -1,0 +1,7 @@
+<div class="sidebar_wrapper">
+    <div class="single_item" *ngFor="let action of actions" [title]="action.name" [routerLink]="action.route" (click)="onSelect(action)" [class.active]="action === actionSelected">
+        <span class="icon icon-{{action.name}}" >
+            </span>
+            <span class="title">{{action.name}}</span>
+    </div>
+</div>

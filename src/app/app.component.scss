@@ -1,0 +1,35 @@
+@import "../styles.scss";
+.panel_container{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    .panel_header{
+        grid-column: 1/13;
+        height: 6.25rem;
+        background: $primary_color;
+    }
+    .panel_sidebar{
+        grid-column: 1/1;
+        background: $primary_color;
+    }
+    .panel_content{
+        display: flex;
+        grid-column: 2/13;
+        min-height: calc(100vh - 10rem);
+        width: 100%;
+        background: #464D57;
+        
+        .sub_sidebar{
+            display: flex;
+            align-items: center;
+            background: rgb(26 31 41 / 90%);
+            border-radius: 0 50px 50px 0;
+
+
+        }
+    }
+    .panel_footer{
+        grid-column: 1/13;
+        background: $primary_color;
+        height: 3.75rem;
+    }
+}
