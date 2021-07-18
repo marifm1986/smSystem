@@ -1,1 +1,56 @@
-<p>dashboard works!</p>
+<div class="panel_container">
+    <div class="reorder_container container">
+        <div class="container_header">
+            <span class="title">Re-Order Reminder</span>
+            <span class="icon icon-back"></span>
+        </div>
+        <div class="container_content">
+            <div class="content_header">
+                <span class="title">Product Name</span>
+                <span class="qty">Min Stock Level</span>
+            </div>
+            <div class="content_wrapper">
+                <div class="single_content" *ngFor="let reorder of reorders">
+                <span class="title">{{reorder.prodName}}</span>
+                <span class="qty">{{reorder.prodQty}}</span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="reorder_container container">
+        <div class="container_header">
+            <span class="title">Re-Order Reminder</span>
+            <span class="icon icon-back"></span>
+        </div>
+        <div class="container_content">
+            <div class="content_header">
+                <span class="title">Product Name</span>
+                <span class="qty">Min Stock Level</span>
+            </div>
+            <div class="content_wrapper">
+                <div class="single_content">
+                <span class="title">Product Name</span>
+                <span class="qty">Min Stock Level</span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="reorder_container container">
+        <div class="container_header">
+            <span class="title">Re-Order Reminder</span>
+            <span class="icon icon-back"></span>
+        </div>
+        <div class="container_content">
+            <div class="content_header">
+                <span class="title">Product Name</span>
+                <span class="qty">Min Stock Level</span>
+            </div>
+            <div class="content_wrapper">
+                <div class="single_content">
+                <span class="title">Product Name</span>
+                <span class="qty">Min Stock Level</span>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
