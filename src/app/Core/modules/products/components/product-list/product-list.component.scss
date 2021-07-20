@@ -1,0 +1,39 @@
+@import "../../../../../../styles.scss";
+
+:host {
+  color: $text_color;
+  display: flex;
+  width: 100%;
+}
+
+.panel_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .container_header{
+      padding: 1rem 2rem 0 1rem;
+      
+  }
+  .product_wrapper {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 14.5rem);
+    overflow: auto;
+    padding: 1rem;
+    gap: 0.2rem;
+    flex: 1;
+    
+  }
+  .single_product {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    height: 39px;
+    background: rgba($primary_color, .5);
+    cursor: pointer;
+    &:hover{
+        background: $primary_color;
+    }
+  }
+}

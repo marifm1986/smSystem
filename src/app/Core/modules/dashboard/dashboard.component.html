@@ -2,7 +2,6 @@
     <div class="reorder_container container">
         <div class="container_header">
             <span class="title">Re-Order Reminder</span>
-            <span class="icon icon-back"></span>
         </div>
         <div class="container_content">
             <div class="content_header">
@@ -17,40 +16,69 @@
             </div>
         </div>
     </div>
-    <div class="reorder_container container">
+    <div class="active_orders_container container">
         <div class="container_header">
-            <span class="title">Re-Order Reminder</span>
-            <span class="icon icon-back"></span>
+            <span class="title">Active Orders</span>
         </div>
         <div class="container_content">
-            <div class="content_header">
-                <span class="title">Product Name</span>
-                <span class="qty">Min Stock Level</span>
+            <div class="content_header orders">
+                <span class="orderNumber">Order #</span>
+                <span class="customer">Customer</span>
+                <span class="date">Date</span>
+                <span class="status">Status</span>
             </div>
-            <div class="content_wrapper">
-                <div class="single_content">
-                <span class="title">Product Name</span>
-                <span class="qty">Min Stock Level</span>
+            <div class="content_wrapper ">
+                <div class="single_content orders" *ngFor="let order of activeOrders">
+                    <span class="orderNumber">{{order.orderNumber}}</span>
+                    <span class="customer">{{order.customer}}</span>
+                    <span class="date">{{order.date}}</span>
+                    <span class="tatus">{{order.status}}</span>
             </div>
             </div>
         </div>
     </div>
-    <div class="reorder_container container">
-        <div class="container_header">
-            <span class="title">Re-Order Reminder</span>
-            <span class="icon icon-back"></span>
+    <div class="profile_container container">
+    <div class="user_profile">
+        <div class="image_wrapper">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="">
         </div>
-        <div class="container_content">
-            <div class="content_header">
-                <span class="title">Product Name</span>
-                <span class="qty">Min Stock Level</span>
+        <div class="content" [class.active]="isMorInforToggle">
+            <span class="user_name">Md. Alamin Khan</span>
+            <span class="designation">Data Entry</span>
+            <span class="email">alamin@gmail.com</span>
+            <span class="phone">01756196928</span>
+            <span class="address">charmoguria, Madaripur</span>
+        </div>
+       
+        <div class="more_info_slider" [class.active]="isMorInforToggle">
+            <div class="slider_action" title="More Information" (click)="toggleMoreInfo()">
+            
             </div>
-            <div class="content_wrapper">
-                <div class="single_content">
-                <span class="title">Product Name</span>
-                <span class="qty">Min Stock Level</span>
+            <div class="detaile">
+            <div class="sale">
+                <div class="today">
+                    <span class="title">Today's Sale</span>
+                    <span class="value">{{todaysSale | currency : 'BDT' : 'symbol-narrow'}}</span>
+                </div>
+                <div class="today">
+                    <span class="title">Total Sale</span>
+                    <span class="value">{{totalSale | currency : 'BDT' : 'symbol-narrow'}}</span>
+                </div>
             </div>
+            <mat-divider></mat-divider>
+            <div class="purchase">
+                <div class="today">
+                    <span class="title">Today's Sale</span>
+                    <span class="value">{{todaysPurchase | currency : 'BDT' : 'symbol-narrow'}}</span>
+                </div>
+                <div class="today">
+                    <span class="title">Total Sale</span>
+                    <span class="value">{{totalPurchase | currency : 'BDT' : 'symbol-narrow'}}</span>
+                </div>
+
             </div>
         </div>
+        </div>
+    </div>
     </div>
 </div>

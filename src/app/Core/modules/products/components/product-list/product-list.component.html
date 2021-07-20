@@ -1,1 +1,28 @@
-<p>product-list works!</p>
+<div class="panel_container">
+    <div class="container_header">
+        <div class="single_product">
+            <span class="code">Prod Code</span>
+            <span class="name">Product Name</span>
+            <span class="description">Description</span>
+            <span class="cost">Cost</span>
+            <span class="unitPrice">MRP</span>
+            <span class="reoder">Re-Order</span>
+            <span class="qty">Quantity</span>
+            <span class="active">Status</span>
+            <span class="category">Category</span>
+        </div>
+    </div>
+    <div class="product_wrapper">
+        <div class="single_product" *ngFor="let product of products">
+            <span class="code">{{product.productCode}}</span>
+            <span class="name">{{product.productName}}</span>
+            <span class="description">{{product.description}}</span>
+            <span class="cost">{{product.cost}}</span>
+            <span class="unitPrice">{{product.price}}</span>
+            <span class="reoder">{{product.reoder}}</span>
+            <span class="qty">{{product.qty}}</span>
+            <span class="active">{{product.active? 'Active':'In-Active'}}</span>
+            <span class="category">{{product.category}}</span>
+        </div>
+    </div>
+</div>
