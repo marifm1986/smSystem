@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+
+private _productFilter: string = '';
+get productFilter():string{
+    return this._productFilter;
+}
+set productFilter(value: string){
+    this._productFilter = value;
+    console.log('in Setter:', value)
+}
+
+
   constructor() { }
 
   ngOnInit(): void {
+      this.productFilter = 'Alin oil 200 ml'
   }
 
   products: any[] = [

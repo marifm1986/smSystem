@@ -1,5 +1,11 @@
 <div class="panel_container">
     <div class="container_header">
+        <div class="action_header">
+            <mat-form-field appearance="outline" floatLabel="never">
+                <input matInput placeholder="Search product" [value]="productFilter">
+            </mat-form-field>
+            <button mat-flat-button>Add New Product</button>
+        </div>
         <div class="single_product">
             <span class="code">Prod Code</span>
             <span class="name">Product Name</span>
