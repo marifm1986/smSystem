@@ -15,6 +15,8 @@ import { ProductListComponent } from './Core/modules/products/components/product
 import { DashboardComponent } from './Core/modules/dashboard/dashboard.component';
 import { CompaniesComponent } from './Core/modules/companies/companies.component';
 import { SubSidebarComponent } from './Core/modules/shared/components/sub-sidebar/sub-sidebar.component';
+import { ConvertoSpacesPipe } from './Core/modules/shared/pipes/convert-to-spaces.pipe';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,13 +31,15 @@ import { SubSidebarComponent } from './Core/modules/shared/components/sub-sideba
     ProductListComponent,
     DashboardComponent,
     CompaniesComponent,
-    SubSidebarComponent
+    SubSidebarComponent,
+    ConvertoSpacesPipe
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     ...MaterialModules
   ],
   exports: [

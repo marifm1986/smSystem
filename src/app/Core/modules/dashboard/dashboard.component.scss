@@ -5,7 +5,6 @@
   display: flex;
   width: 100%;
 }
-
 .panel_container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -186,6 +185,9 @@
           }
           &:hover {
             background: $secondary_color;
+          }
+          &.min_stock{
+            background: #b70000;
           }
         }
       }

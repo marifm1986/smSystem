@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import {Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataPassService {
-  // private messageSource = new BehaviorSubject<string>('');
-  // currentMessage = this.messageSource.asObservable();
+  // private _getProductList = new BehaviorSubject<string>('');
+  // currentMessage = this._getProductList.asObservable();
+  
   showComponentName = new Subject
   showComponentitle = new Subject
+  getProductList = new Subject;
   
   constructor() { }
   transferData(msg: any) {
@@ -17,4 +19,8 @@ export class DataPassService {
   componentTtle(title: any) {
     this.showComponentitle.next(title);
   }
+  sendProduct(arra: any){
+    this.getProductList.next(arra);
+  }
+    
 }

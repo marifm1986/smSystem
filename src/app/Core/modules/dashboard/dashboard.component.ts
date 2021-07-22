@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IProduct } from '../../models/product';
+import { DataPassService } from '../../services/data-pass.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,9 +16,13 @@ export class DashboardComponent implements OnInit {
   todaysPurchase = 823530;
   totalPurchase = 53550225;
 
-    constructor() { }
+  constructor(private dataService: DataPassService, private ProductService: ProductService) { }
+  totalCompanies: any;
+  reorders: any;
 
-  reorders: any[] = [{
+  products: IProduct[] = [];
+
+  /* reorders: any[] = [{
     id: 1,
     prodName: "Truffle - Peelings",
     prodQty: "4"
@@ -415,7 +422,7 @@ export class DashboardComponent implements OnInit {
     id: 100,
     prodName: "Tarts Assorted",
     prodQty: "36"
-  }];
+  }]; */
 
   activeOrders: any[] = [{
     id: 1,
@@ -1018,12 +1025,13 @@ export class DashboardComponent implements OnInit {
     date: "1/14/2021",
     status: false
   }];
-  
-  ngOnInit(): void {
+
+  ngOnInit() {
+      this.products = this.ProductService.getAllProducts()
   }
 
-  toggleMoreInfo(){
-this.isMorInforToggle =! this.isMorInforToggle;
+  toggleMoreInfo() {
+    this.isMorInforToggle = !this.isMorInforToggle;
   }
 
 

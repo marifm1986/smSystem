@@ -14,11 +14,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.showComponentName.subscribe((companiesQty => {
-this.totalCompanies = companiesQty; }));
+      this.totalCompanies = companiesQty;
+    }));
 
- this.dataService.showComponentitle.subscribe((subTitle => {
-   this.component_sub_title = subTitle; }));
- 
+    this.dataService.showComponentitle.subscribe((subTitle => {
+      this.component_sub_title = subTitle;
+    }));
+
+
   }
 
 }

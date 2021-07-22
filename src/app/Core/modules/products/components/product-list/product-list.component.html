@@ -1,10 +1,19 @@
 <div class="panel_container">
     <div class="container_header">
         <div class="action_header">
-            <mat-form-field appearance="outline" floatLabel="never">
-                <input matInput placeholder="Search product" [value]="productFilter">
-            </mat-form-field>
-            <button mat-flat-button>Add New Product</button>
+            <div class="filter">
+                <span class="total_products">Filtered Products: {{FilteredProducts.length}}</span>
+                <mat-form-field appearance="outline" floatLabel="never">
+                    <input matInput placeholder="Search product" [(ngModel)]="productFilter">
+                </mat-form-field>
+                
+            </div>
+<div class="new_product">
+    <button mat-flat-button>Add New Product</button>
+    <span class="total_products">Total Products: {{products.length}}</span>
+</div>
+    
+
         </div>
         <div class="single_product">
             <span class="code">Prod Code</span>
@@ -13,19 +22,21 @@
             <span class="cost">Cost</span>
             <span class="unitPrice">MRP</span>
             <span class="reoder">Re-Order</span>
+            <span class="reoder">Stock</span>
             <span class="qty">Quantity</span>
             <span class="active">Status</span>
             <span class="category">Category</span>
         </div>
     </div>
     <div class="product_wrapper">
-        <div class="single_product" *ngFor="let product of products">
-            <span class="code">{{product.productCode}}</span>
-            <span class="name">{{product.productName}}</span>
+        <div class="single_product" [class.min_stock]="product.stock <= 5" *ngFor="let product of FilteredProducts">
+            <span class="code">{{product.productCode | convertToSpaces:'-'}}</span>
+            <span class="name">{{product.productName | titlecase}}</span>
             <span class="description">{{product.description}}</span>
-            <span class="cost">{{product.cost}}</span>
-            <span class="unitPrice">{{product.price}}</span>
-            <span class="reoder">{{product.reoder}}</span>
+            <span class="cost">{{product.cost | currency : 'BDT' : 'symbol-narrow'}}</span>
+            <span class="unitPrice">{{product.price | currency : 'BDT' : 'symbol-narrow'}}</span>
+            <span class="reoder">{{product.reorder }}</span>
+            <span class="reoder">{{product.stock }}</span>
             <span class="qty">{{product.qty}}</span>
             <span class="active">{{product.active? 'Active':'In-Active'}}</span>
             <span class="category">{{product.category}}</span>
