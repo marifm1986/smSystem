@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IProduct } from '../models/product';
 
@@ -6,7 +7,9 @@ import { IProduct } from '../models/product';
 })
 export class ProductService {
 
-  constructor() { }
+   
+
+  constructor( private http: HttpClient) { }
 
   getAllProducts(): IProduct[] {
     return [
