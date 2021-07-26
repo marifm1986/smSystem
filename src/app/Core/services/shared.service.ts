@@ -29,14 +29,14 @@ export class SharedService {
     return this.http.get<any>(this.APIUrl + 'Employee');
   }
 
-  addEmpDepartment(val: any) {
+  addEmployee(val: any) {
     return this.http.post(this.APIUrl + 'Employee', val);
   }
 
-  updateEmpDepartment(val: any) {
+  updateEmployee(val: any) {
     return this.http.put(this.APIUrl + 'Employee', val);
   }
-  deleteEmpDepartment(val: any) {
+  deleteEmployee(val: any) {
     return this.http.delete(this.APIUrl + 'Employee/' + val);
   }
 

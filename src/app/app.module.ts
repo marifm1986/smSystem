@@ -16,7 +16,14 @@ import { DashboardComponent } from './Core/modules/dashboard/dashboard.component
 import { CompaniesComponent } from './Core/modules/companies/companies.component';
 import { SubSidebarComponent } from './Core/modules/shared/components/sub-sidebar/sub-sidebar.component';
 import { ConvertoSpacesPipe } from './Core/modules/shared/pipes/convert-to-spaces.pipe';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule  } from "@angular/common/http";
+import { ProductDetailsComponent } from './Core/modules/products/components/product-details/product-details.component';
+import { EmployeesComponent } from './Core/modules/employees/employees.component';
+import { EmployeeComponent } from './Core/modules/employees/components/employee/employee.component';
+import { DepartmentComponent } from './Core/modules/companies/department/department.component';
+import { AddEditDepartmentComponent } from './Core/modules/companies/department/add-edit-department/add-edit-department.component';
+import { ShowDepartmentComponent } from './Core/modules/companies/department/show-department/show-department.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,13 @@ import { FormsModule } from "@angular/forms";
     DashboardComponent,
     CompaniesComponent,
     SubSidebarComponent,
-    ConvertoSpacesPipe
+    ConvertoSpacesPipe,
+    ProductDetailsComponent,
+    EmployeesComponent,
+    EmployeeComponent,
+    DepartmentComponent,
+    AddEditDepartmentComponent,
+    ShowDepartmentComponent
   
   ],
   imports: [
@@ -40,6 +53,8 @@ import { FormsModule } from "@angular/forms";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     ...MaterialModules
   ],
   exports: [

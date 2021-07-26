@@ -1,0 +1,35 @@
+@import "../../../../../styles.scss";
+
+:host{
+    width: 100%;
+    height: 100%;
+}
+
+.panel_container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    gap: 1rem;
+    .panel_header{
+        display: flex;
+        align-items: center;
+        height: 5rem;
+        width: 100%;
+        padding: 1rem;
+        background: $primary_color;
+        color: $text_color;
+    }
+
+    .panel_content{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 1rem;
+        height: 100%;
+        .content_box{
+            background: #eee;
+            padding: 1rem;
+            height: 100%;
+        }
+    }
+}

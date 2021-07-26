@@ -1,0 +1,14 @@
+.emp_form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .mat-form-field {
+    min-width: 48%;
+  }
+  .action_wrapper{
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+  }
+}

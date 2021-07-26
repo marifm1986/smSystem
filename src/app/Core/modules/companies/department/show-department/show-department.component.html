@@ -1,0 +1,21 @@
+
+
+
+<div class="panel_container">
+    <div class="panel_header">
+        <span class="panel_title">Department List</span>
+        <span>Total {{departmentList.length}}</span>
+    </div>
+    <div class="panel_content">
+        <div class="content_header">
+            <span class="header_name h_title">Department Name</span>
+            <span class="header_name h_title action">Action</span>
+        </div>
+        <div class="content_wrapper">
+            <div class="single_content" *ngFor="let dep of departmentList">
+                <span class="header_name content">{{dep.DepartmentName}}</span>
+               <span class="remove" (click)="onDelete(dep)">remove</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,25 @@
-<p>employee-list works!</p>
+<div class="panel_container">
+    <div class="panel_header">
+        <span class="panel_title">Employee List</span>
+        <span>Total {{employeeList.length}}</span>
+    </div>
+    <div class="panel_content">
+        <div class="content_header">
+            <span class="header_name h_title">Employee Name</span>
+            <span class="header_name h_title">Department</span>
+            <span class="header_name h_title date">Date of Joining</span>
+            <span class="header_name h_title">Photo File Name</span>
+            <span class="header_name action">Action</span>
+        </div>
+        <div class="content_wrapper">
+            <div class="single_content" *ngFor="let emp of employeeList">
+                <span class="header_name content">{{emp.EmployeeName}}</span>
+                <span class="header_name content">{{emp.Department}}</span>
+                <span class="header_name content date">{{emp.DateOfJoining}}</span>
+                <span class="header_name content">{{emp.PhotoFileName}}</span>
+                <span class="remove">remove</span>
+                
+            </div>
+        </div>
+    </div>
+</div>
