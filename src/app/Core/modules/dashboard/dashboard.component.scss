@@ -30,6 +30,26 @@
       grid-column: 10/13;
     }
 
+    .date_time{
+      display: grid;
+      place-items: center;
+      height: 5rem;
+      width: 100%;
+      margin: auto;
+
+      .time{
+        font-size: 1.875rem;
+        letter-spacing: 0.625rem;
+        margin-bottom: 1rem;
+      }
+      .date{
+        font-size: 20px;
+      }
+      .note{
+        color: #888;
+      }
+    }
+
     .user_profile {
       display: flex;
       border-radius: 4px;

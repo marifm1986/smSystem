@@ -19,6 +19,8 @@ export class DashboardComponent implements OnInit {
   constructor(private dataService: DataPassService, private ProductService: ProductService) { }
   totalCompanies: any;
   reorders: any;
+  intervalId: any;
+  time = new Date();
 
   products: IProduct[] = [];
 
@@ -1027,7 +1029,12 @@ export class DashboardComponent implements OnInit {
   }];
 
   ngOnInit() {
-      this.products = this.ProductService.getAllProducts()
+      this.products = this.ProductService.getAllProducts();
+
+      this.intervalId = setInterval(() => {
+        this.time = new Date();
+      }, 1000);
+  
   }
 
   toggleMoreInfo() {
