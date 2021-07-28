@@ -17,8 +17,11 @@
         height: 5rem;
         width: 100%;
         padding: 1rem;
-        background: $primary_color;
-        color: $text_color;
+        background: $primary_gray;
+        color: $primary_color;
+        .panel_title{
+            font-size: 20px;
+        }
     }
 
     .panel_content{

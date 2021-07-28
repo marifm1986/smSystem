@@ -1,4 +1,7 @@
 @import "../../../../../../styles.scss";
+:host{
+  height: 100%;
+}
 .sidebar_wrapper {
   display: flex;
   flex-direction: column;

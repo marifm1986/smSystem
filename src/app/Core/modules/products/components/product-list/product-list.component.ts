@@ -579,7 +579,9 @@ export class ProductListComponent implements OnInit {
        
         this.products = this.ProductService.getAllProducts()
         this.FilteredProducts = this.products;
+        this.numberOfUnhandledHours();
 
+        
     }
 
     performFilter(filterBy: string): IProduct[] {
@@ -589,6 +591,12 @@ export class ProductListComponent implements OnInit {
     }
 
 
+    numberOfUnhandledHours() {
+        return this.products
+          .reduce((sum: number, b: IProduct) => b.price, 0);
 
+               }
 
+      
+      
 }
