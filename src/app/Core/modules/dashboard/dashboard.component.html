@@ -10,9 +10,9 @@
             </div>
             <div class="content_wrapper">
                 <ng-container *ngFor="let prod of products">
-                    <div class="single_content" [class.min_stock]="prod.stock <= 5" *ngIf="prod.stock !<= prod.reorder">
-                        <span class="title">{{prod.productName}}</span>
-                        <span class="qty">{{prod.stock}}</span>
+                    <div class="single_content">
+                        <span class="title">{{prod.ProductName}}</span>
+                        <span class="qty">{{prod.ReOrder}}</span>
                     </div>
                 </ng-container>
             </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="active_orders_container container">
         <div class="container_header">
-            <span class="title">Active Orders</span>
+            <span class="title">Active Orders: {{activeOrders.length}}</span>
         </div>
         <div class="container_content">
             <div class="content_header orders">
@@ -48,6 +48,7 @@
             <div class="content" [class.active]="isMorInforToggle">
                 <span class="user_name">Md. Alamin Khan</span>
                 <span class="designation">Data Entry</span>
+                
                 <span class="email">alamin@gmail.com</span>
                 <span class="phone">01756196928</span>
             </div>

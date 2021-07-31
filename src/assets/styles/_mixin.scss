@@ -1,5 +1,198 @@
-@mixin ellipsis {
-    text-overflow: ellipsis;
+@import '../../assets/styles/responsive.scss';
+
+@mixin flat_btn {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+  
+    &::selection {
+      background: none;
+    }
+  }
+  
+  @mixin remove_line {
+    ::ng-deep.mat-form-field-underline {
+      display: none;
+    }
+  }
+  
+  @mixin ellipsis {
     overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
-}
+  }
+  @mixin ellipsis_important {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  @mixin ellipsis_dynamic($value) {
+    display: -webkit-box;
+    -webkit-line-clamp: $value;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  @mixin mat_toggler($colorvalue) {
+    ::ng-deep {
+      .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+        background-color: $colorvalue;
+      }
+  
+      .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+        background-color: rgba($colorvalue, 0.54);
+      }
+    }
+  }
+  
+  @mixin click_press {
+    cursor: pointer;
+  
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+  
+  @mixin hx_host {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 100%;
+  }
+  
+  @mixin min_max_h($value) {
+    max-height: $value;
+    min-height: $value;
+  }
+  
+  @mixin min_max_w($value) {
+    max-width: $value;
+    min-width: $value;
+  }
+  @mixin min_max_w_h($value) {
+    height: $value;
+    height: $value;
+    max-width: $value;
+    max-height: $value;
+    min-width: $value;
+    min-height: $value;
+  }
+  
+  @mixin width_height($value) {
+    width: $value;
+    height: $value;
+  }
+  
+  @mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @mixin mat_form_height {
+    ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+      padding: 0.4em 0px !important;
+    }
+  
+    ::ng-deep .mat-form-field-label-wrapper {
+      top: -1.5em;
+    }
+  
+    ::ng-deep
+      .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+      transform: translateY(-1.1em) scale(0.75);
+      width: 133.33333%;
+    }
+  
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+      border-radius: 0 !important;
+    }
+  
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start,
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-end {
+      border: 1px solid currentColor;
+      border-radius: 0 !important;
+      border-top: none !important;
+      border-left: none !important;
+      border-right: none !important;
+    }
+  }
+  
+  @mixin mat_field_underline_color($value) {
+    ::ng-deep.mat-form-field-underline {
+      background: $value !important;
+    }
+  }
+  
+  // Below Mixing only will work on Appearance = "outline"
+  
+  @mixin mat_field_height($value) {
+    .mat-form-field {
+      ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+        padding: $value 0px !important;
+      }
+      ::ng-deep .mat-form-field-label-wrapper {
+        top: $value/$value + -1.8rem;
+      }
+      ::ng-deep
+        .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+        .mat-form-field-label {
+        transform: translateY(-1.1em) scale(0.75);
+        width: 133.33333%;
+      }
+      ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0 !important;
+      }
+    }
+  }
+  
+  @mixin spinner_color($value) {
+    ::ng-deep .mat-spinner {
+      svg {
+        circle {
+          stroke: $value;
+        }
+      }
+    }
+  }
+  
+  @mixin mat_checkBox_color($value) {
+    &.mat-checkbox-checked {
+      .mat-checkbox-background {
+        background: $value;
+      }
+    }
+  }
+  
+  @mixin matform_field_padd_margin_none {
+    ::ng-deep.mat-form-field-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  @mixin slim_scroll($value, $track) {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background: $track;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-border-radius: 0.625rem;
+      border-radius: 0.625rem;
+      background: $track;
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: $value;
+    }
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      // width: 8px;
+      background: rgba($value, 0.5);
+    }
+  }
+  

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/Core/services/shared.service';
 
 @Component({
   selector: 'app-add-edit-department',
@@ -6,10 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-department.component.scss']
 })
 export class AddEditDepartmentComponent implements OnInit {
-
-  constructor() { }
+  @Input() dep: any;
+  DepartmentID: number = 0;
+  DepartmentName: string = '';
+  successMess = '';
+  constructor(private service: SharedService) { }
 
   ngOnInit(): void {
+    this.DepartmentID = this.dep.DepartmentID;
+    this.DepartmentName = this.dep.DepartmentName;
   }
 
+
+  addDepartment() {
+    var val = {
+      DepartmentID: this.DepartmentID,
+      DepartmentName: this.DepartmentName
+    }
+    this.service.addDepartment(val).subscribe(res => {
+      this.successMess = res.toString();
+    })
+  }
+  updateDepartment() {
+    var val = {
+      DepartmentID: this.DepartmentID,
+      DepartmentName: this.DepartmentName
+    }
+    this.service.updateDepartment(val).subscribe(res => {
+      this.successMess = res.toString();
+    })
+  }
 }

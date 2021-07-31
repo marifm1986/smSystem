@@ -1,5 +1,25 @@
 
-
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal"
+ data-bs-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+    Add Depratment
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()"></button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-department [dep]="dep" *ngIf="ActivateAddEditDepComp"></app-add-edit-department>
+        </div>
+     
+      </div>
+    </div>
+  </div>
 
 <div class="panel_container">
     <div class="panel_header">
@@ -14,6 +34,8 @@
         <div class="content_wrapper">
             <div class="single_content" *ngFor="let dep of departmentList">
                 <span class="header_name content">{{dep.DepartmentName}}</span>
+                <span class="edit" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" (click)="editClick(dep)" data-backdrop="static" data-keyboard="false">Edit</span>
                <span class="remove" (click)="onDelete(dep)">remove</span>
             </div>
         </div>

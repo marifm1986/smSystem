@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 import { EmployeeService } from './shared/employee.service';
 
 @Component({
@@ -8,10 +9,24 @@ import { EmployeeService } from './shared/employee.service';
   providers: [EmployeeService]
 })
 export class EmployeesComponent implements OnInit {
+  ActivateAddEditDepComp = false;
+  modalTitle: string = '';
+  departmentList: any = [];
+  dep: any;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private shareService: SharedService) { }
 
   ngOnInit(): void {
+    this.getDepartmentList();
   }
+
+
+
+  getDepartmentList() {
+    this.shareService.getDepList().subscribe(data => {
+      this.departmentList = data;
+    })
+  }
+
 
 }

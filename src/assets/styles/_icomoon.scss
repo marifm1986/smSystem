@@ -1,13 +1,13 @@
 @font-face {
   font-family: "icomoon";
-  src: url("../icomoon/fonts/icomoon.eot?h42uqa");
-  src: url("../icomoon/fonts/icomoon.eot?h42uqa#iefix")
+  src: url("../../assets/styles/fonts/icomoon.eot?h42uqa");
+  src: url("../../assets/styles/fonts/icomoon.eot?h42uqa#iefix")
       format("embedded-opentype"),
-    url("../icomoon/fonts/icomoon.ttf?h42uqa")
+    url("../../assets/styles/fonts/icomoon.ttf?h42uqa")
       format("truetype"),
-    url("../icomoon/fonts/icomoon.woff?h42uqa")
+    url("../../assets/styles/fonts/icomoon.woff?h42uqa")
       format("woff"),
-    url("../icomoon/fonts/icomoon.svg?h42uqa#icomoon")
+    url("../../assets/styles/fonts/icomoon.svg?h42uqa#icomoon")
       format("svg");
   font-weight: normal;
   font-style: normal;
@@ -29,6 +29,9 @@
 }
 
 
+.icon-departments:before {
+  content: "\e934";
+}
 .icon-transaction:before {
   content: "\ea11";
 }
@@ -40,9 +43,6 @@
 }
 .icon-dbl_down:before {
   content: "\ea0e";
-}
-.icon-down_thin:before {
-  content: "\ea0c";
 }
 .icon-pause:before {
   content: "\ea0a";
@@ -230,15 +230,6 @@
 .icon-minimize:before {
   content: "\e9d0";
 }
-.icon-sort_za:before {
-  content: "\e9ce";
-}
-.icon-sort_az:before {
-  content: "\e9cd";
-}
-.icon-sort_90:before {
-  content: "\e9cc";
-}
 .icon-cover:before {
   content: "\e9cb";
 }
@@ -275,9 +266,6 @@
 .icon-uploaded:before {
   content: "\e9bd";
 }
-.icon-hmrc:before {
-  content: "\e9bc";
-}
 .icon-default2:before {
   content: "\e9bb";
 }
@@ -301,33 +289,6 @@
 }
 .icon-memo:before {
   content: "\e9b4";
-}
-.icon-ms:before {
-  content: "\e9b3";
-}
-.icon-s:before {
-  content: "\e9b2";
-}
-.icon-client_receipt:before {
-  content: "\e9ac";
-}
-.icon-client_spend:before {
-  content: "\e9ad";
-}
-.icon-invoice2:before {
-  content: "\e9ae";
-}
-.icon-office_receipt:before {
-  content: "\e9af";
-}
-.icon-office_spend:before {
-  content: "\e9b0";
-}
-.icon-transfer:before {
-  content: "\e9b1";
-}
-.icon-default:before {
-  content: "\e9ab";
 }
 .icon-group:before {
   content: "\e9aa";
@@ -441,9 +402,6 @@
 .icon-credit-card:before {
   content: "\e933";
 }
-.icon-cube_outline:before {
-  content: "\e934";
-}
 .icon-debtors:before {
   content: "\e935";
 }
@@ -458,9 +416,6 @@
 }
 .icon-drag:before {
   content: "\e939";
-}
-.icon-drag_hand:before {
-  content: "\e93a";
 }
 .icon-drag-dots:before {
   content: "\e93b";
@@ -540,15 +495,6 @@
 .icon-leadJoint:before {
   content: "\e954";
 }
-.icon-ledger:before {
-  content: "\e955";
-}
-.icon-ledger_new:before {
-  content: "\e956";
-}
-.icon-ledger2:before {
-  content: "\e957";
-}
 .icon-library:before {
   content: "\e958";
 }
@@ -584,9 +530,6 @@
 }
 .icon-logout:before {
   content: "\e963";
-}
-.icon-make_a_call:before {
-  content: "\e964";
 }
 .icon-matter:before {
   content: "\e965";
@@ -634,23 +577,8 @@
 .icon-printer:before {
   content: "\e973";
 }
-.icon-qb_text:before {
-  content: "\e974";
-}
-.icon-question_Q:before {
-  content: "\e975";
-}
-.icon-quick-check:before {
-  content: "\e976";
-}
 .icon-receipt:before {
   content: "\e977";
-}
-.icon-receive:before {
-  content: "\e978";
-}
-.icon-received:before {
-  content: "\e979";
 }
 .icon-reply:before {
   content: "\e97a";
@@ -694,15 +622,6 @@
 .icon-share:before {
   content: "\e987";
 }
-.icon-show_more:before {
-  content: "\e988";
-}
-.icon-signature:before {
-  content: "\e989";
-}
-.icon-signature2:before {
-  content: "\e98a";
-}
 .icon-sms:before {
   content: "\e98b";
 }
@@ -745,9 +664,6 @@
 .icon-tasks:before {
   content: "\e999";
 }
-.icon-tax_new:before {
-  content: "\e99a";
-}
 .icon-template:before {
   content: "\e9a9";
 }
@@ -760,26 +676,11 @@
 .icon-time_sheet_fill:before {
   content: "\e99d";
 }
-.icon-unit:before {
-  content: "\e99e";
-}
-.icon-unit_fill:before {
-  content: "\e99f";
-}
 .icon-update-settings:before {
   content: "\e9a0";
 }
 .icon-upload:before {
   content: "\e9a1";
-}
-.icon-user3:before {
-  content: "\e9a2";
-}
-.icon-user-plus:before {
-  content: "\e9a3";
-}
-.icon-users:before {
-  content: "\e9a4";
 }
 .icon-video:before {
   content: "\e9a5";

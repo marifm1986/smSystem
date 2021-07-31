@@ -10,7 +10,12 @@ import { EmployeeService } from '../../shared/employee.service';
   styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
-employeeList: any =[];
+  employeeList: any = [];
+
+  ActivateAddEditEmpComp = false;
+  modalTitle: string = '';
+  emp: any;
+
 
   constructor(private shareService: SharedService) { }
 
@@ -19,12 +24,45 @@ employeeList: any =[];
   }
 
   getEmployeeList() {
-    this.shareService.getEmpList().subscribe(data =>{
+    this.shareService.getEmpList().subscribe(data => {
       this.employeeList = data;
     })
   }
 
 
+  onDelete(item: any) {
+    if (confirm('Are you Sure?')) {
+      this.shareService.deleteEmployee(item.EmployeeID).subscribe(data => {
+        alert(data.toString());
+        this.getEmployeeList();
+      })
+    }
+  }
 
-  
+
+  addClick() {
+    this.emp = {
+      EmployeeID: 0,
+      EmployeeName: '',
+      Department: '',
+      DateOfJoining: '',
+      PhotoFileName: 'anonymouse.png',
+    }
+    this.modalTitle = "Add Employee"
+    this.ActivateAddEditEmpComp = true;
+  }
+  closeClick() {
+    this.ActivateAddEditEmpComp = false;
+    this.getEmployeeList();
+  }
+
+  editClick(item: any) {
+    this.emp = item;
+    this.modalTitle = "Edit Employee"
+    this.ActivateAddEditEmpComp = true;
+  }
+
+
+
+
 }

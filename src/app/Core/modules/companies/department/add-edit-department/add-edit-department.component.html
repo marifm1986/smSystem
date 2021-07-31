@@ -1,1 +1,10 @@
-<p>add-edit-department works!</p>
+<div class="form-form row">
+    <label for="" class="col-sm-2 col-form-label">Department Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="DepartmentName" placeholder="Department Name">
+        <span class="text-success mt-2">{{successMess}}</span>
+    </div>
+</div>
+
+<button class="btn-primary btn" (click)="addDepartment()" *ngIf="DepartmentID == 0">Add</button>
+<button class="btn-primary btn" (click)="updateDepartment()" *ngIf="DepartmentID !== 0">Update</button>

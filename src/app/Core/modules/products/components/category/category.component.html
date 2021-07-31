@@ -1,0 +1,20 @@
+<div class="panel_container">
+    <div class="panel_header">
+        <span class="title">Category List</span>
+    </div>
+    <div class="panel_content">
+        <div class="category_wrapper">
+            <div class="cate_header">
+                <div class="single_category">
+                    <span class="cate_name">Category Name</span>
+                </div>
+            </div>
+            <div class="cate_body">
+                <div class="single_category" *ngFor="let cate of cateList">
+                    <span class="cate_name">{{cate.CategoryName}}</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

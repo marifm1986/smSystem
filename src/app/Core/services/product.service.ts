@@ -1,17 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IProduct } from '../models/product';
+import { ICategory } from '../modules/products/model/category';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
+  readonly APIUrl = 'http://localhost:5000/api';
    
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllProducts(): IProduct[] {
+  getAllProducts(): Observable<IProduct[]>
+  {
+      return this.http.get<IProduct[]>(this.APIUrl + '/Product');
+  }
+  geCategory(): Observable<ICategory[]>
+  {
+      return this.http.get<ICategory[]>(this.APIUrl + '/Category');
+  }
+
+
+
+
+
+
+
+ /*  getAllProducts(): IProduct[] {
     return [
       {
 
@@ -259,8 +276,8 @@ export class ProductService {
           productCode: "ol500",
           productName: "Alin Oil 500 ml",
           description: "24pcs per Carton",
-          cost: 213096,
-          price: 213096,
+          cost: 213,
+          price: 213,
           reorder: 20,
           stock: 56,
           qty: 24,
@@ -274,8 +291,8 @@ export class ProductService {
           productCode: "ol80",
           productName: "Alin Oil 80 ml",
           description: "48pcs per Carton",
-          cost: 114300,
-          price: 114300,
+          cost: 114,
+          price: 114,
           reorder: 20,
           stock: 200,
           qty: 48,
@@ -379,7 +396,7 @@ export class ProductService {
           productCode: "fp20",
           productName: "Alin bbq fried peas 20gm",
           description: "240pcs per Carton",
-          cost: 897.60,
+          cost: 597.60,
           price: 897.60,
           reorder: 20,
           stock: 20,
@@ -469,8 +486,8 @@ export class ProductService {
           productCode: "ppr35",
           productName: "Alin puffed rice 35gm",
           description: "240pcs per Carton",
-          cost: 147360,
-          price: 147360,
+          cost: 147,
+          price: 147,
           reorder: 20,
           stock: 20,
           qty: 240,
@@ -514,8 +531,8 @@ export class ProductService {
           productCode: "cm20",
           productName: "Alin chiken curry powder 20gm",
           description: "144pcs per Carton",
-          cost: 148032,
-          price: 148032,
+          cost: 1480,
+          price: 1480,
           reorder: 20,
           stock: 20,
           qty: 144,
@@ -529,8 +546,8 @@ export class ProductService {
           productCode: "cp50",
           productName: "Alin chilli powder 50gm",
           description: "96pcs per Carton",
-          cost: 179424,
-          price: 179424,
+          cost: 1794,
+          price: 1794,
           reorder: 20,
           stock: 20,
           qty: 96,
@@ -544,8 +561,8 @@ export class ProductService {
           productCode: "mc20",
           productName: "Alin meat curry powder 20gm",
           description: "144pcs per Carton",
-          cost: 148032,
-          price: 148032,
+          cost: 1480,
+          price: 1480,
           reorder: 20,
           stock: 20,
           qty: 144,
@@ -559,8 +576,8 @@ export class ProductService {
           productCode: "tp50",
           productName: "Alin turmeric powder 50gm",
           description: "96pcs per Carton",
-          cost: 179424,
-          price: 179424,
+          cost: 1794,
+          price: 1794,
           reorder: 20,
           stock: 20,
           qty: 96,
@@ -599,5 +616,5 @@ export class ProductService {
 
       }
   ];
-  }
+  } */
 }

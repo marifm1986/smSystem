@@ -1,25 +1,52 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+  (click)="addClick()" data-backdrop="static" data-keyboard="false">
+  Add Employee
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeClick()"></button>
+      </div>
+      <div class="modal-body">
+        <app-new-employee [emp]="emp" *ngIf="ActivateAddEditEmpComp"></app-new-employee>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
 <div class="panel_container">
-    <div class="panel_header">
-        <span class="panel_title">Employee List</span>
-        <span>Total {{employeeList.length}}</span>
+  <div class="panel_header">
+    <span class="panel_title">Employee List</span>
+    <span>Total {{employeeList.length}}</span>
+  </div>
+  <div class="panel_content">
+    <div class="content_header">
+      <span class="header_name h_title">Employee Name</span>
+      <span class="header_name h_title">Department</span>
+      <span class="header_name h_title date">Date of Joining</span>
+      <span class="header_name h_title">Photo File Name</span>
+      <span class="header_name action">Action</span>
     </div>
-    <div class="panel_content">
-        <div class="content_header">
-            <span class="header_name h_title">Employee Name</span>
-            <span class="header_name h_title">Department</span>
-            <span class="header_name h_title date">Date of Joining</span>
-            <span class="header_name h_title">Photo File Name</span>
-            <span class="header_name action">Action</span>
-        </div>
-        <div class="content_wrapper">
-            <div class="single_content" *ngFor="let emp of employeeList">
-                <span class="header_name content">{{emp.EmployeeName}}</span>
-                <span class="header_name content">{{emp.Department}}</span>
-                <span class="header_name content date">{{emp.DateOfJoining}}</span>
-                <span class="header_name content">{{emp.PhotoFileName}}</span>
-                <span class="remove">remove</span>
-                
-            </div>
-        </div>
+    <div class="content_wrapper">
+      <div class="single_content" *ngFor="let emp of employeeList">
+        <span class="header_name content">{{emp.EmployeeName}}</span>
+        <span class="header_name content">{{emp.Department}}</span>
+        <span class="header_name content date">{{emp.DateOfJoining}}</span>
+        <span class="header_name content">{{emp.PhotoFileName}}</span>
+
+        <span class="edit icon-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(emp)"
+          data-backdrop="static" data-keyboard="false"></span>
+        <span class="remove icon-delete" (click)="onDelete(emp)"></span>
+      </div>
     </div>
+  </div>
 </div>

@@ -18,7 +18,7 @@ export class SubSidebarComponent implements OnInit {
     {
       id: 2,
       name: 'product',
-      route: 'product_list'
+      route: 'products'
     },
     {
       id: 3,

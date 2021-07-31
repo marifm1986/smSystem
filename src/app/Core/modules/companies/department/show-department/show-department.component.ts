@@ -7,9 +7,10 @@ import { SharedService } from 'src/app/Core/services/shared.service';
   styleUrls: ['./show-department.component.scss']
 })
 export class ShowDepartmentComponent implements OnInit {
-
-
+  ActivateAddEditDepComp = false;
+  modalTitle: string = '';
   departmentList: any = [];
+  dep: any;
 
   constructor(private shareService: SharedService) { }
 
@@ -17,8 +18,10 @@ export class ShowDepartmentComponent implements OnInit {
     this.getDepartmentList();
   }
 
+
+
   getDepartmentList() {
-    this.shareService.getAllDepartments().subscribe(data => {
+    this.shareService.getDepList().subscribe(data => {
       this.departmentList = data;
     })
   }
@@ -30,5 +33,25 @@ export class ShowDepartmentComponent implements OnInit {
         this.getDepartmentList();
       })
     }
+  }
+
+
+  addClick(){
+    this.dep={
+      DepartmentID:0,
+      DepartmentName:'',
+    }
+    this.modalTitle = "Add Department"
+    this.ActivateAddEditDepComp = true;
+  }
+  closeClick(){
+    this.ActivateAddEditDepComp = false;
+    this.getDepartmentList();
+  }
+
+  editClick(item:any){
+    this.modalTitle = "Edit Department"
+    this.ActivateAddEditDepComp = true;
+    this.dep = item;
   }
 }

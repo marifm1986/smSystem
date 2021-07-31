@@ -5,6 +5,7 @@
 @import "../src/assets/styles/mixin.scss";
 @import "../src/assets/styles/helper.scss";
 @import "../src/assets/styles/variables.scss";
+@import "../src/assets/styles/_reset.scss";
 @import "../src/assets/styles/icomoon.scss";
 
 // @import "../src/assets/icomoon/style.css";
@@ -14,18 +15,7 @@ body {
   flex-direction: column;
   margin: 0;
   padding: 0;
-
   font-family: 'Comfortaa', cursive !important;
-  ul {
-    list-style-type: none;
-  }
-  p {
-    margin: 0;
-    padding: 0;
-  }
-  a {
-    text-decoration: none;
-  }
 }
 html,
 body {

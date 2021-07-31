@@ -20,7 +20,7 @@
         grid-column: 2/13;
         min-height: calc(100vh - 10rem);
         width: 100%;
-        background: #464D57;
+        background: $primary_gray;
         
         .sub_sidebar{
             display: flex;

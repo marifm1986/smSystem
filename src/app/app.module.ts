@@ -24,6 +24,8 @@ import { EmployeeComponent } from './Core/modules/employees/components/employee/
 import { DepartmentComponent } from './Core/modules/companies/department/department.component';
 import { AddEditDepartmentComponent } from './Core/modules/companies/department/add-edit-department/add-edit-department.component';
 import { ShowDepartmentComponent } from './Core/modules/companies/department/show-department/show-department.component';
+import { ProductsComponent } from './Core/modules/products/products.component';
+import { CategoryComponent } from './Core/modules/products/components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,10 @@ import { ShowDepartmentComponent } from './Core/modules/companies/department/sho
     EmployeeComponent,
     DepartmentComponent,
     AddEditDepartmentComponent,
-    ShowDepartmentComponent
+    ShowDepartmentComponent,
+    ProductsComponent,
+    CategoryComponent,
+    
   
   ],
   imports: [

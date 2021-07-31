@@ -16,7 +16,10 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    background: $primary_gray;
+    background: #fff;
+    box-shadow: $shadow;
+    border: $border;
+    border-radius: 0.25rem;
     &.reorder_container {
       grid-column: 1/4;
     }
@@ -79,6 +82,9 @@
         }
         .designation {
           color: $text_color;
+        }
+        .email{
+          margin-top: 2rem;
         }
         .user_name,
         .designation,
@@ -151,9 +157,7 @@
           }
         }
 
-        mat-divider {
-          border-color: $secondary_color;
-        }
+       
       }
     }
 
@@ -162,6 +166,12 @@
       align-items: center;
       justify-content: space-between;
       height: 3.125rem;
+      padding: 0 1rem;
+      font-size: 16px;
+      font-weight: 600;
+      .title{
+        color: $key_color;
+      }
       .icon {
         font-size: 1.3rem;
       }
@@ -175,6 +185,8 @@
         justify-content: space-between;
         height: 2.75rem;
         padding: 0 1rem;
+        border-bottom: $border;
+        font-weight: 600;
         &.orders {
           display: grid;
           grid-template-columns: 1fr 2fr 1fr 1fr;
@@ -185,7 +197,7 @@
         flex-direction: column;
         overflow: auto;
         max-height: calc(100vh - 20rem);
-
+@include slim_scroll($primary_color, #ccc);
         .single_content {
           display: flex;
           align-items: center;
@@ -203,7 +215,7 @@
           }
           &:hover {
             color: $key_color;
-            background: rgba($key_color, 0.1);
+            background: $hover;
           }
           &.min_stock{
             color: $key_color;
@@ -213,4 +225,8 @@
       }
     }
   }
+}
+
+mat-divider {
+  border-color: $primary_gray;
 }

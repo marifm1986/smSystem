@@ -14,25 +14,28 @@ export class SidebarComponent implements OnInit {
       name: 'home',
       route: 'companies'
     },
-   
- 
-  
+     
     {
-      id: 6,
+      id: 2,
       name: 'total stock',
-      route: 'product_list'
+      route: ''
     },
    
     {
-      id: 8,
+      id: 3,
       name: 'user',
-      route: 'employee_list'
+      route: ''
     },
     {
-      id: 8,
+      id: 4,
       name: 'employee',
-      route: 'employees'
+      route: 'employee'
     },
+    {
+      id: 5,
+      name: 'departments',
+      route: 'departments'
+    }
   ];
   ngOnInit(): void {
   }
