@@ -36,6 +36,7 @@ export class SharedService {
   updateEmployee(val: any) {
     return this.http.put(this.APIUrl + '/Employee', val);
   }
+  
   deleteEmployee(val: any) {
     return this.http.delete(this.APIUrl + '/Employee/' + val);
   }

@@ -8,6 +8,6 @@ export interface IProduct {
     ReOrder:number;
     Category:string;
     Status: boolean;
-    Supplier: string;
+    Supplier?: string;
 
 }

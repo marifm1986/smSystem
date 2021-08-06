@@ -1,9 +1,27 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                    (click)="closeClick()"></button>
+            </div>
+            <div class="modal-body">
+                <app-product-details [prod]="prod" *ngIf="ActivateAddEditProdComp"></app-product-details>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 <div class="panel_container">
     <div class="container_header">
         <div class="action_header">
             <div class="filter">
                 <span class="total_products">Filtered Products: {{FilteredProducts.length}}</span>
-               
+
                 <div class="search_box">
                     <mat-form-field floatLabel="never">
                         <input matInput placeholder="Search product" [(ngModel)]="productFilter">
@@ -15,35 +33,46 @@
 
             </div>
             <div class="new_product">
-                <button mat-flat-button>Add New Product</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+                    Add Employee
+                </button>
+
+
                 <span class="total_products">Total Products: {{products.length}}</span>
-                
+
             </div>
         </div>
     </div>
     <div class="panel_content">
-        
-    <div class="single_product product_table_header">
-        <span class="code">Prod Code</span>
-        <span class="name">Product Name</span>
-        <span class="description">Description</span>
-        <span class="cost">Cost</span>
-        <span class="unitPrice">MRP</span>
-        <span class="reoder">Re-Order</span>
-        <span class="active">Status</span>
-        <span class="category">Category</span>
-    </div>
-    <div class="product_wrapper">
-        <div class="single_product"  *ngFor="let product of FilteredProducts">
-            <span class="code">{{product.ProductCode | convertToSpaces:'-'}}</span>
-            <span class="name">{{product.ProductName | titlecase}}</span>
-            <span class="description">{{product.Description}}</span>
-            <span class="cost">{{product.ProductCost | currency : 'BDT' : 'symbol-narrow'}}</span>
-            <span class="unitPrice">{{product.ProductMrp | currency : 'BDT' : 'symbol-narrow'}}</span>
-            <span class="reoder">{{product.ReOrder }}</span>
-            <span class="category">{{product.Category}}</span>
-            <span class="active">{{product.Status? 'Active':'In-Active'}}</span>
+
+        <div class="single_product product_table_header">
+            <span class="code">Prod Code</span>
+            <span class="name">Product Name</span>
+            <span class="description">Description</span>
+            <span class="cost">Cost</span>
+            <span class="unitPrice">MRP</span>
+            <span class="reoder">Re-Order</span>
+            <span class="active">Category</span>
+            <span class="category"> Status</span>
+            <span class="category"> action</span>
+        </div>
+        <div class="product_wrapper">
+            <div class="single_product" *ngFor="let product of FilteredProducts">
+                <span class="code">{{product.ProductCode | convertToSpaces:'-'}}</span>
+                <span class="name">{{product.ProductName | titlecase}}</span>
+                <span class="description">{{product.Description}}</span>
+                <span class="cost">{{product.ProductCost | currency : 'BDT' : 'symbol-narrow'}}</span>
+                <span class="unitPrice">{{product.ProductMrp | currency : 'BDT' : 'symbol-narrow'}}</span>
+                <span class="reoder">{{product.ReOrder }}</span>
+                <span class="category">{{product.Category}}</span>
+                <span class="active">{{product.Status? 'Active':'In-Active'}}</span>
+                <div class="action">
+                    <span class="edit icon-edit" (click)="editClick(product)"></span>
+                    <span class="delete text-danger icon-delete" (click)="onDelete(product)"></span>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </div>

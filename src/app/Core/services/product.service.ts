@@ -13,14 +13,44 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
+
+ geCategory(): Observable<ICategory[]>
+  {
+      return this.http.get<ICategory[]>(this.APIUrl + '/Category');
+  }
+ addCategory(val:any)
+  {
+      return this.http.post(this.APIUrl + '/Category', val);
+  }
+ updateCategory(val:any)
+  {
+      return this.http.put(this.APIUrl + '/Category', val);
+  }
+ deleteCategory(val:any)
+  {
+      return this.http.delete(this.APIUrl + '/Category/' + val);
+  }
+
   getAllProducts(): Observable<IProduct[]>
   {
       return this.http.get<IProduct[]>(this.APIUrl + '/Product');
   }
-  geCategory(): Observable<ICategory[]>
+ 
+  addProduct(val:any)
   {
-      return this.http.get<ICategory[]>(this.APIUrl + '/Category');
+      return this.http.post(this.APIUrl + '/Product', val);
   }
+
+  updateProduct(val:any)
+  {
+      return this.http.put(this.APIUrl + '/Product', val);
+  }
+ 
+  deleteProduct(val:any)
+  {
+      return this.http.delete(this.APIUrl + '/Product/' + val);
+  }
+ 
 
 
 
