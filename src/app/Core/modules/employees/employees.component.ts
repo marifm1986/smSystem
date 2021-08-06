@@ -17,16 +17,16 @@ export class EmployeesComponent implements OnInit {
   constructor(private shareService: SharedService) { }
 
   ngOnInit(): void {
-    this.getDepartmentList();
+    // this.getDepartmentList();
   }
 
 
 
-  getDepartmentList() {
-    this.shareService.getDepList().subscribe(data => {
-      this.departmentList = data;
-    })
-  }
+  // getDepartmentList() {
+  //   this.shareService.getDepList().subscribe(data => {
+  //     this.departmentList = data;
+  //   })
+  // }
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/Core/services/product.service';
+import { ICategory } from '../../model/category';
 
 @Component({
   selector: 'app-product-details',
@@ -19,7 +20,7 @@ export class ProductDetailsComponent implements OnInit {
   Status: boolean = true;
   Supplier: string = '';
 
-  CategoryList: any = []
+  CategoryList: ICategory[] = []
 
   successMess = '';
   constructor(private productService: ProductService) { }
@@ -29,7 +30,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   loadCategoryList() {
-    this.productService.geCategory().subscribe((data: any) => {
+    this.productService.getAllCategories().subscribe((data: any) => {
       this.CategoryList = data;
 
       this.ProductID = this.prod.ProductID;
@@ -42,10 +43,7 @@ export class ProductDetailsComponent implements OnInit {
       this.Category = this.prod.Category;
       this.Status = this.prod.Status;
       this.Supplier = this.prod.Supplier;
-      
-
-
-    })
+          })
   }
 
 

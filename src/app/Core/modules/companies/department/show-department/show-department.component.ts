@@ -43,6 +43,7 @@ export class ShowDepartmentComponent implements OnInit {
     }
     this.modalTitle = "Add Department"
     this.ActivateAddEditDepComp = true;
+    this.getDepartmentList();    
   }
   closeClick(){
     this.ActivateAddEditDepComp = false;

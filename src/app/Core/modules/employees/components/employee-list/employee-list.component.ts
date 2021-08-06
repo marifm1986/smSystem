@@ -28,7 +28,23 @@ export class EmployeeListComponent implements OnInit {
       this.employeeList = data;
     })
   }
+  addClick() {
+    this.emp = {
+      EmployeeID: 0,
+      EmployeeName: '',
+      Department: '',
+      DateOfJoining: '',
+      PhotoFileName: 'anonymous.png',
+    }
+    this.modalTitle = "Add Employee"
+    this.ActivateAddEditEmpComp = true;
+  }
 
+  editClick(item: any) {
+    this.emp = item;
+    this.modalTitle = "Edit Employee"
+    this.ActivateAddEditEmpComp = true;
+  }
 
   onDelete(item: any) {
     if (confirm('Are you Sure?')) {
@@ -40,27 +56,12 @@ export class EmployeeListComponent implements OnInit {
   }
 
 
-  addClick() {
-    this.emp = {
-      EmployeeID: 0,
-      EmployeeName: '',
-      Department: '',
-      DateOfJoining: '',
-      PhotoFileName: 'anonymouse.png',
-    }
-    this.modalTitle = "Add Employee"
-    this.ActivateAddEditEmpComp = true;
-  }
+
   closeClick() {
     this.ActivateAddEditEmpComp = false;
     this.getEmployeeList();
   }
 
-  editClick(item: any) {
-    this.emp = item;
-    this.modalTitle = "Edit Employee"
-    this.ActivateAddEditEmpComp = true;
-  }
 
 
 

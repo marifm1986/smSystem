@@ -6,7 +6,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl">
+  <div class="modal-dialog modal-dialog-centered modal-ml">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">{{modalTitle}}</h5>
@@ -37,12 +37,11 @@
       <span class="header_name action">Action</span>
     </div>
     <div class="content_wrapper">
-      <div class="single_content" *ngFor="let emp of employeeList">
+      <div class="single_content" *ngFor="let emp of employeeList" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="editClick(emp)">
         <span class="header_name content">{{emp.EmployeeName}}</span>
         <span class="header_name content">{{emp.Department}}</span>
         <span class="header_name content date">{{emp.DateOfJoining}}</span>
         <span class="header_name content">{{emp.PhotoFileName}}</span>
-
         <span class="edit icon-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(emp)"
           data-backdrop="static" data-keyboard="false"></span>
         <span class="remove icon-delete" (click)="onDelete(emp)"></span>

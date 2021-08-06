@@ -52,6 +52,11 @@ export class ProductService {
   }
  
 
+  getAllCategories(): Observable<ICategory[]>
+  {
+      return this.http.get<ICategory[]>(this.APIUrl + '/Product/GetAllCategoryNames');
+  }
+
 
 
 

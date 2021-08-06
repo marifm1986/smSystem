@@ -66,8 +66,8 @@ export class NewEmployeeComponent implements OnInit {
     })
   }
 
-  UploadPhoto(event: any) {
-    var file = event.target.file [0];
+  uploadPhoto(event: any) {
+    var file = event.target.files[0];
     const formData: FormData = new FormData();
     formData.append('uploadedFile', file, file.name);
 

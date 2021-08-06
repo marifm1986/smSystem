@@ -16,6 +16,7 @@ export class AddEditDepartmentComponent implements OnInit {
   ngOnInit(): void {
     this.DepartmentID = this.dep.DepartmentID;
     this.DepartmentName = this.dep.DepartmentName;
+    this.getDepartmentList();
   }
 
 
@@ -26,6 +27,13 @@ export class AddEditDepartmentComponent implements OnInit {
     }
     this.service.addDepartment(val).subscribe(res => {
       this.successMess = res.toString();
+    })
+    this.getDepartmentList();
+  }
+
+  getDepartmentList() {
+    this.service.getDepList().subscribe(data => {
+      this.dep = data;
     })
   }
   updateDepartment() {
