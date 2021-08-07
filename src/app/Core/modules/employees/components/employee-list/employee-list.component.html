@@ -29,23 +29,46 @@
     <span>Total {{employeeList.length}}</span>
   </div>
   <div class="panel_content">
-    <div class="content_header">
-      <span class="header_name h_title">Employee Name</span>
-      <span class="header_name h_title">Department</span>
-      <span class="header_name h_title date">Date of Joining</span>
-      <span class="header_name h_title">Photo File Name</span>
-      <span class="header_name action">Action</span>
-    </div>
-    <div class="content_wrapper">
-      <div class="single_content" *ngFor="let emp of employeeList" data-bs-toggle="modal" data-bs-target="#exampleModal"  (click)="editClick(emp)">
-        <span class="header_name content">{{emp.EmployeeName}}</span>
-        <span class="header_name content">{{emp.Department}}</span>
-        <span class="header_name content date">{{emp.DateOfJoining}}</span>
-        <span class="header_name content">{{emp.PhotoFileName}}</span>
-        <span class="edit icon-edit" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editClick(emp)"
-          data-backdrop="static" data-keyboard="false"></span>
-        <span class="remove icon-delete" (click)="onDelete(emp)"></span>
+    <div class="table_wrapper">
+      <div class="table_header">
+        <div class="single_row">
+          <span class="single_col code">Emp Code</span>
+          <span class="single_col name">Employee Name</span>
+          <span class="single_col department">Department</span>
+          <span class="single_col mobile">Mobile</span>
+          <span class="single_col email">Email</span>
+          <span class="single_col address">Address</span>
+          <span class="single_col date">Date of Joining</span>
+          <span class="single_col salary">Salary</span>
+          <span class="single_col action">Action</span>
+        </div>
+      </div>
+      <div class="table_body">
+        <div class="single_row" *ngFor="let emp of employeeList" >
+          <span class="single_col code">{{emp.EmployeeCode}}</span>
+          <span class="single_col name">{{emp.EmployeeName}}</span>
+          <span class="single_col department">{{emp.Department}}</span>
+          <span class="single_col mobile">{{emp.MobileNo}}</span>
+          <span class="single_col email">{{emp.EmailId}}</span>
+          <span class="single_col address">{{emp.Address}}</span>
+          <span class="single_col date">{{emp.DateOfJoining}}</span>
+          <span class="single_col salary">{{emp.Salary |currency:'BDT' : 'symbol-narrow'}}</span>
+          <div class="single_col action">
+            <button mat-icon-button data-bs-toggle="modal" data-bs-target="#exampleModal" 
+            data-backdrop="static" data-keyboard="false" (click)="editClick(emp)">
+              <span class="edit icon-edit" ></span>
+            </button>
+            
+            <button mat-icon-button (click)="onDelete(emp)">
+              <span class="remove icon-delete" ></span>
+            </button>
+          
+          </div>
+          
+        </div>
       </div>
     </div>
+    
+  
   </div>
 </div>

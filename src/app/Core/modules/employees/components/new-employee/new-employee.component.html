@@ -3,11 +3,15 @@
     <div class="content_wrapper">
         <div class="left_content">
             <mat-form-field appearance="outline">
+                <mat-label>Employee Code</mat-label>
+                <input matInput [(ngModel)]="EmployeeCode" placeholder="Employee Code">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
                 <mat-label>Employee Name</mat-label>
                 <input matInput [(ngModel)]="EmployeeName" placeholder="Name">
-              </mat-form-field>
+            </mat-form-field>
 
-                 
+
             <label for="" class="col-sm-2 col-form-label">Select Department</label>
             <div class="col-sm-10">
                 <select class="form-control" [(ngModel)]="Department">
@@ -16,19 +20,37 @@
 
                 </select>
             </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input matInput [(ngModel)]="MobileNo" placeholder="Mobile">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="EmailId" placeholder="Email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input matInput [(ngModel)]="Address" placeholder="Address">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Salary</mat-label>
+                <input matInput [(ngModel)]="Salary" placeholder="Salary">
+            </mat-form-field>
+
             <label for="" class="col-sm-2 col-form-label">Date of Joining</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control"  [(ngModel)]="DateOfJoining" placeholder="Joining Date">
+                <input type="date" class="form-control" [(ngModel)]="DateOfJoining" placeholder="Joining Date">
             </div>
         </div>
         <div class="image_wrapper ml-3 bd-highlight" style="width: 40%;">
             <img [src]="PhotoFilePath" alt="PhotoFilePath" height="250px" width="200px">
-            <input type="file" (change)="uploadPhoto($event)" class="mt-2">
+            <input type="file" (change)="uploadPhoto($event)">
         </div>
     </div>
     <div class="fontent_footer">
-    <button mat-flat-button class="btn_save_update" (click)="addEmployee()" *ngIf="emp.EmployeeID == 0">Add</button>
-    <button mat-flat-button class="btn_close" (click)="updateEmployee()" *ngIf="emp.EmployeeID !== 0">Update</button>
-    
-</div>
+        <button mat-flat-button class="btn_save_update" (click)="addEmployee()" *ngIf="emp.EmployeeID == 0">Add</button>
+        <button mat-flat-button class="btn_close" (click)="updateEmployee()"
+            *ngIf="emp.EmployeeID !== 0">Update</button>
+
+    </div>
 </div>

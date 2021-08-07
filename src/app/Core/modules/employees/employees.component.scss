@@ -25,10 +25,7 @@
     }
 
     .panel_content{
-        display: grid;
-        grid-template-columns: 2fr 3fr;
-        gap: 1rem;
-        height: 100%;
+        display: flex;
         .content_box{
             background: #eee;
             padding: 1rem;

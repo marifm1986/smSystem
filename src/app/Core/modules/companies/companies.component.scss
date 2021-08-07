@@ -6,6 +6,7 @@
   padding: 1rem;
   max-height: calc(100vh - 10rem);
   overflow: auto;
+  background: #ccc;
   .company_wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -18,7 +19,9 @@
       max-width: 21.25rem;
       height: 185px;
       border: $border;
+      border-color: $primary_color;
       border-radius: 0.25rem;
+      box-shadow: $shadow;
       .card_header {
         display: flex;
         align-items: center;
@@ -28,13 +31,13 @@
         border-radius: inherit ;
         background: $primary_color;
         .circle {
-          width: 0.8125rem;
-          height: 0.8125rem;
+          width: 0.6rem;
+          height: 0.6rem;
           border-radius: 20px;
           background: $key_color;
         }
         .status {
-          color: $key_color;
+          color: $primary_gray;
           flex: 1;
         }
 
@@ -49,10 +52,10 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        background: rgba($primary_color, 0.5);
+        background: $primary_gray;
         height: 100%;
         padding: 1rem;
-        color: $text_color;
+        color: $primary_color;
         .compan_name {
           font-size: 1.25rem;
           @include ellipsis();
@@ -67,7 +70,7 @@
           justify-content: space-between;
           margin-top: auto;
           .activity {
-            color: yellow;
+            color: $primary_color;
           }
         }
       }
@@ -82,6 +85,9 @@
         font-size: 0.75rem;
         border-radius: inherit;
         cursor: pointer;
+        &:hover{
+          background: lighten($primary_color, 10%);
+        }
       }
       .card_more_info {
         position: absolute;

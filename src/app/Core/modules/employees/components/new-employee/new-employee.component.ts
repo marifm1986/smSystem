@@ -9,9 +9,14 @@ import { SharedService } from 'src/app/Core/services/shared.service';
 export class NewEmployeeComponent implements OnInit {
   @Input() emp: any;
   EmployeeID: number = 0;
+  EmployeeCode: string = '';
   EmployeeName: string = '';
   Department: string = '';
+  MobileNo: string = '';
+  EmailId: string = '';
+  Address: string = '';
   DateOfJoining: string = '';
+  Salary: string = '';
   PhotoFileName: string = '';
   PhotoFilePath: string = '';
 
@@ -29,9 +34,14 @@ export class NewEmployeeComponent implements OnInit {
       this.DepartmentList = data;
 
       this.EmployeeID = this.emp.EmployeeID;
+      this.EmployeeCode = this.emp.EmployeeCode;
       this.EmployeeName = this.emp.EmployeeName;
       this.Department = this.emp.Department;
+      this.MobileNo = this.emp.MobileNo;
+      this.EmailId = this.emp.EmailId;
+      this.Address = this.emp.Department;
       this.DateOfJoining = this.emp.DateOfJoining;
+      this.Salary = this.emp.Salary;
       this.PhotoFileName = this.emp.PhotoFileName;
       this.PhotoFilePath = this.service.PhotoUrl + this.PhotoFileName;
 
@@ -43,9 +53,14 @@ export class NewEmployeeComponent implements OnInit {
   addEmployee() {
     var val = {
       EmployeeID: this.EmployeeID,
+      EmployeeCode: this.EmployeeCode,
       EmployeeName: this.EmployeeName,
       Department: this.Department,
+      MobileNo: this.MobileNo,
+      EmailId: this.EmailId,
+      Address: this.Address,
       DateOfJoining: this.DateOfJoining,
+      Salary: this.Salary,
       PhotoFileName: this.PhotoFileName,
     }
     this.service.addEmployee(val).subscribe(res => {
@@ -55,9 +70,14 @@ export class NewEmployeeComponent implements OnInit {
   updateEmployee() {
     var val = {
       EmployeeID: this.EmployeeID,
+      EmployeeCode: this.EmployeeCode,
       EmployeeName: this.EmployeeName,
       Department: this.Department,
+      MobileNo: this.MobileNo,
+      EmailId: this.EmailId,
+      Address: this.Address,
       DateOfJoining: this.DateOfJoining,
+      Salary: this.Salary,
       PhotoFileName: this.PhotoFileName,
     }
     

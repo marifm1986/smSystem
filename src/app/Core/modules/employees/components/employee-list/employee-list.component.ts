@@ -31,8 +31,13 @@ export class EmployeeListComponent implements OnInit {
   addClick() {
     this.emp = {
       EmployeeID: 0,
+      EmployeeCode: '',
       EmployeeName: '',
+      Slary: 0,
       Department: '',
+      MobileNo: '',
+      EmailId: '',
+      Address: '',
       DateOfJoining: '',
       PhotoFileName: 'anonymous.png',
     }
