@@ -20,6 +20,9 @@
          background: #fff;
          box-shadow: $shadow2;
          border-radius: 0.25rem;
+         &.category_container{
+            height: max-content; 
+         }
      }
 
  }   

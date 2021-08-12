@@ -11,16 +11,18 @@ import { ProductService } from '../../services/product.service';
 export class DashboardComponent implements OnInit {
   isMorInforToggle = false;
 
+
   todaysSale = 125530;
   totalSale = 12000225;
   todaysPurchase = 823530;
   totalPurchase = 53550225;
 
-  constructor(private dataService: DataPassService, private ProductService: ProductService) { }
+  constructor(private DataPassService: DataPassService, private ProductService: ProductService) { }
   totalCompanies: any;
   reorders: any;
   intervalId: any;
   time = new Date();
+  selectedSupplierName: string | undefined;;
 
   products: IProduct[] = [];
 
@@ -627,12 +629,21 @@ export class DashboardComponent implements OnInit {
   }];
 
   ngOnInit() {
+    this.getSharedData();
+
     this.getProdList();
 
     this.intervalId = setInterval(() => {
       this.time = new Date();
     }, 1000);
 
+  }
+
+  getSharedData(){
+    this.DataPassService.showSupplierName.subscribe(message =>{
+      console.log(message);
+    
+    });
   }
 
   getProdList(){

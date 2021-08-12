@@ -8,14 +8,18 @@ export class DataPassService {
   // private _getProductList = new BehaviorSubject<string>('');
   // currentMessage = this._getProductList.asObservable();
   
-  showComponentName = new Subject
-  showComponentitle = new Subject
-  getProductList = new Subject;
+  showSupplierName = new Subject();
+  showComponentitle = new Subject();
+  getProductList = new Subject();;
   
   constructor() { }
+  
   transferData(msg: any) {
-    this.showComponentName.next(msg);
+    this.showSupplierName.next(msg);
   }
+
+
+  
   componentTtle(title: any) {
     this.showComponentitle.next(title);
   }

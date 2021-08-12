@@ -1,18 +1,46 @@
-<div class="d-flex flex-row bd-highlight md-3">
+<div class="panel_container">
 
-    <div class="form-form row" style="width: 60%;">
-        <label for="" class="col-sm-2 col-form-label">Product Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" [(ngModel)]="ProductName" placeholder="Product Name">
+    <div class="input_wrapper">
+        <div class="single_input">
+            <label>Product Code</label>
+            <input type="text" [(ngModel)]="ProductCode" placeholder="Product Code">
         </div>
-        <label for="" class="col-sm-2 col-form-label">Category Name</label>
-        <div class="col-sm-10">
-            <select class="form-control" [(ngModel)]="Category">
+        <div class="single_input">
+            <label>Product Name</label>
+            <input type="text" [(ngModel)]="ProductName" placeholder="Product Name">
+        </div>
+        <div class="single_input">
+            <label>Description</label>
+            <input type="text" [(ngModel)]="Description" placeholder="Description">
+        </div>
+        <div class="single_input number">
+            <label>Product Cost</label>
+            <input type="text" [(ngModel)]="ProductCost" placeholder="Product Cost">
+        </div>
+        <div class="single_input number">
+            <label>Product MRP</label>
+            <input type="text" [(ngModel)]="ProductMrp" placeholder="Product MRP">
+        </div>
+        <div class="single_input number">
+            <label>Re Order</label>
+            <input type="text" [(ngModel)]="ReOrder" placeholder="Re Order">
+        </div>
+        <div class="single_input">
+            <label>Category Name</label>
+            <select [(ngModel)]="Category">
                 <option>--Select--</option>
                 <option *ngFor="let cate of CategoryList">{{cate.CategoryName}}</option>
     
             </select>
         </div>
+        <div class="single_input">
+            <label>Supplier</label>
+            <input type="text" [(ngModel)]="Supplier" placeholder="Supplier">
+        </div>
+        <!-- <div class="single_input">
+            <label for="active">Status</label>
+            <input type="checkbox" id="active" (onchange)="Status" Name">
+        </div> -->
               
     </div>
     

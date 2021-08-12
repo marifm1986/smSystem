@@ -33,11 +33,11 @@ export class EmployeeListComponent implements OnInit {
       EmployeeID: 0,
       EmployeeCode: '',
       EmployeeName: '',
-      Slary: 0,
       Department: '',
       MobileNo: '',
       EmailId: '',
       Address: '',
+      Slary: 0,
       DateOfJoining: '',
       PhotoFileName: 'anonymous.png',
     }
@@ -46,9 +46,9 @@ export class EmployeeListComponent implements OnInit {
   }
 
   editClick(item: any) {
-    this.emp = item;
     this.modalTitle = "Edit Employee"
     this.ActivateAddEditEmpComp = true;
+    this.emp = item;
   }
 
   onDelete(item: any) {

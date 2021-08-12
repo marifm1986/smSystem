@@ -8,7 +8,7 @@ import { ICategory } from '../modules/products/model/category';
   providedIn: 'root'
 })
 export class ProductService {
-  readonly APIUrl = 'http://localhost:5000/api';
+  readonly APIUrl = 'http://localhost:50572/api';
    
 
   constructor(private http: HttpClient) { }

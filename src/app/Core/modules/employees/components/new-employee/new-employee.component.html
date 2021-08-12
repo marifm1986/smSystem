@@ -12,8 +12,8 @@
             </mat-form-field>
 
 
-            <label for="" class="col-sm-2 col-form-label">Select Department</label>
             <div class="col-sm-10">
+                <label for="" class="col-sm-2 col-form-label">Select Department</label>
                 <select class="form-control" [(ngModel)]="Department">
                     <option>--Select--</option>
                     <option *ngFor="let dept of DepartmentList">{{dept.DepartmentName}}</option>

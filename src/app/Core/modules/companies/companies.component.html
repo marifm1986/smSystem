@@ -1,20 +1,31 @@
 <div class="panel_container">
+    <div class="panel_header">
+        <div class="header_title">
+            <span class="title">Suppliers</span>
+            <span class="total">{{companies.length}}</span>
+            {{selectedSupplierName|json}}
+        </div>
+        <div class="search_box">
+            <input type="text" placeholder="Search">
+        </div>
+        
+    </div>
     <div class="company_wrapper">
-        <div class="single_company_card" *ngFor="let company of companies" [ngClass]="{'active': company.showMore}">
+        <div class="single_company_card"  *ngFor="let company of companies" [class.active]="showMore === company">
             <div class="card_header">
                 <span class="circle"></span>
-                <span class="status">{{company.status}}</span>
-                <span class="icon material-icons" routerLink="/dashboard">
+                <span class="status">{{company.active? "Active":"InActive"}}</span>
+                <span class="icon material-icons" routerLink="/dashboard" (click)="onSelect(company)" >
                     unfold_more
                     </span>  
             </div>
             <div class="card_body">
-                <span class="compan_name">{{company.name}}</span>
-                <span class="sub_title">{{company.subTitle}}</span>
-                <div class="activity_wrapper">
+                <span class="compan_name">{{company.SupplierName}}</span>
+                <span class="sub_title">{{company.Description}}</span>
+                <!-- <div class="activity_wrapper">
                     <span class="activity">{{company.salePending? 'Sale Pending': ''}}</span>
                     <div class="activity">{{company.purchasePending? 'Purchase Pending' : ''}}</div>
-                </div>
+                </div> -->
                 
             </div>
             <div class="card_footer" (click)="onSeeMore(company)">
@@ -24,11 +35,11 @@
             <div class="card_more_info">
                 <div class="product">
                     <span class="title">Products</span>
-                    <span class="qty value">{{company.prodQty}}</span>
+                    <span class="qty value">{{company.Products}}</span>
                 </div>
                 <div class="value">
                     <span class="title">Value</span>
-                    <span class="value">{{company.totalValue | currency : 'BDT' : 'symbol-narrow'}}</span>
+                    <span class="value">{{company.value | currency : 'BDT' : 'symbol-narrow'}}</span>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/Core/services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  ActivateAddEditProdComp = false;
+  activateAddEditProdComp = false;
   modalTitle: string = '';
   prod: any;
 
@@ -77,19 +77,19 @@ export class ProductListComponent implements OnInit {
       Supplier: '',
     }
     this.modalTitle = "Add Product"
-    this.ActivateAddEditProdComp = true;
+    this.activateAddEditProdComp = true;
     this.getProdList();
   }
 
   closeClick() {
-    this.ActivateAddEditProdComp = false;
+    this.activateAddEditProdComp = false;
     this.getProdList();
   }
 
-  editClick(item: any) {
-    this.prod = item;
+  editClick(prd: any) {
+    this.activateAddEditProdComp = true;
     this.modalTitle = "Edit Product"
-    this.ActivateAddEditProdComp = true;
+    this.prod = prd;
   }
 
 

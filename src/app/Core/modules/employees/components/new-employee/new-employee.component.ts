@@ -39,7 +39,7 @@ export class NewEmployeeComponent implements OnInit {
       this.Department = this.emp.Department;
       this.MobileNo = this.emp.MobileNo;
       this.EmailId = this.emp.EmailId;
-      this.Address = this.emp.Department;
+      this.Address = this.emp.Address;
       this.DateOfJoining = this.emp.DateOfJoining;
       this.Salary = this.emp.Salary;
       this.PhotoFileName = this.emp.PhotoFileName;
